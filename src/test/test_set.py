@@ -1,5 +1,4 @@
 import unittest
-import Set
 
 class TestSet(unittest.TestCase):
     
