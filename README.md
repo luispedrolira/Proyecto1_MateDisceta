@@ -14,13 +14,13 @@ Operaciones de Conjuntos: Se implementaron las siguientes operaciones entre conj
 Se desarrolló una estructura de datos personalizada llamada Set, que permite almacenar y operar sobre conjuntos de forma eficiente. Esta estructura fue construida desde cero para cumplir con los requisitos del proyecto, asegurando una implementación que refleja los principios matemáticos que gobiernan las operaciones de conjuntos.
 
 ## Detalles Técnicos:
-Lenguaje: Python
-Tipología de Datos: Solo tipos de datos primitivos
-Operaciones Matemáticas: Basadas en teoría de conjuntos, expresadas y calculadas manualmente.
+- Lenguaje: Python
+- Tipología de Datos: Solo tipos de datos primitivos
+- Operaciones Matemáticas: Basadas en teoría de conjuntos, expresadas y calculadas manualmente.
 
 ## Cómo Ejecutar el Proyecto:
-Clonar el repositorio.
-Ejecutar el archivo principal Main.py.
+- Clonar el repositorio.
+- Ejecutar el archivo principal Main.py.
 Explorar las diferentes operaciones entre conjuntos disponibles a través del menú interactivo.
 
 
