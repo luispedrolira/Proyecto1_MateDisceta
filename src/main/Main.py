@@ -70,30 +70,39 @@ class SetApp:
             # Se pasa el primer conjunto (set1) al crear la instancia de Operations
             self.operations = Operations(set1)
 
-            operation = simpledialog.askstring("Operar Conjuntos", "Ingrese la operación (Complemento, Unión, Intersección, Diferencia, Diferencia Simétrica):")
-            
-            if operation:
-                operation = operation.lower()
-                result = None
-
-                if operation == "complemento":
-                    result = self.operations.complement()
-                elif operation == "unión":
-                    result = self.operations.union(set2)
-                elif operation == "intersección":
-                    result = self.operations.intersection(set2)
-                elif operation == "diferencia":
-                    result = self.operations.difference(set2)
-                elif operation == "diferencia simétrica":
-                    result = self.operations.symmetric_difference(set2)
-                else:
-                    messagebox.showerror("Error", "Operación no válida.")
-                    return
-
-                # Mostrar el resultado en la interfaz gráfica
-                self.show_result(operation.capitalize(), result, set1_name, set2_name)
+            self.show_operations_menu(set1_name, set2_name, set2)
         else:
             messagebox.showerror("Error", "Uno o ambos nombres de conjuntos no son válidos.")
+
+    def show_operations_menu(self, set1_name, set2_name, set2):
+        operation_window = tk.Toplevel(self.root)
+        operation_window.title("Seleccionar Operación")
+
+        tk.Label(operation_window, text="Seleccione una operación:").pack(pady=10)
+
+        tk.Button(operation_window, text="Unión", command=lambda: self.perform_operation("unión", set2, set1_name, set2_name, operation_window)).pack(pady=5)
+        tk.Button(operation_window, text="Intersección", command=lambda: self.perform_operation("intersección", set2, set1_name, set2_name, operation_window)).pack(pady=5)
+        tk.Button(operation_window, text="Diferencia", command=lambda: self.perform_operation("diferencia", set2, set1_name, set2_name, operation_window)).pack(pady=5)
+        tk.Button(operation_window, text="Diferencia Simétrica", command=lambda: self.perform_operation("diferencia simétrica", set2, set1_name, set2_name, operation_window)).pack(pady=5)
+        tk.Button(operation_window, text="Complemento", command=lambda: self.perform_operation("complemento", set2, set1_name, set2_name, operation_window)).pack(pady=5)
+
+    def perform_operation(self, operation, set2, set1_name, set2_name, operation_window):
+        result = None
+
+        if operation == "complemento":
+            result = self.operations.complement()
+        elif operation == "unión":
+            result = self.operations.union(set2)
+        elif operation == "intersección":
+            result = self.operations.intersection(set2)
+        elif operation == "diferencia":
+            result = self.operations.difference(set2)
+        elif operation == "diferencia simétrica":
+            result = self.operations.symmetric_difference(set2)
+
+        # Mostrar el resultado en la interfaz gráfica
+        self.show_result(operation.capitalize(), result, set1_name, set2_name)
+        operation_window.destroy()
 
     def show_result(self, operation_name, result, set1_name, set2_name):
         self.result_text.config(state=tk.NORMAL)
@@ -106,3 +115,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = SetApp(root)
     root.mainloop()
+
