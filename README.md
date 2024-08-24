@@ -23,5 +23,5 @@ Clonar el repositorio.
 Ejecutar el archivo principal Main.py.
 Explorar las diferentes operaciones entre conjuntos disponibles a través del menú interactivo.
 
-=====
+
 Este proyecto es una excelente demostración de cómo aplicar conceptos teóricos de la matemática en un entorno de programación, y cómo optimizar la manipulación de datos utilizando estructuras creadas desde cero.
