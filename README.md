@@ -3,6 +3,7 @@ Este proyecto forma parte del curso de Matemática Discreta, en el cual se imple
 
 ## Características del Proyecto:
 Construcción de Conjuntos: El programa permite al usuario crear conjuntos utilizando las 26 letras del alfabeto y los 10 dígitos numéricos.
+
 Operaciones de Conjuntos: Se implementaron las siguientes operaciones entre conjuntos:
 - Complemento
 - Unión
@@ -21,6 +22,7 @@ Se desarrolló una estructura de datos personalizada llamada Set, que permite al
 ## Cómo Ejecutar el Proyecto:
 - Clonar el repositorio.
 - Ejecutar el archivo principal Main.py.
+
 Explorar las diferentes operaciones entre conjuntos disponibles a través del menú interactivo.
 
 
