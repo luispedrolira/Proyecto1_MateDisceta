@@ -31,7 +31,15 @@ class Operations:
                 result.add_element(element)
         return result
 
-    # 'symmetric_difference' retorna la diferencia simétrica de los n conjuntos.
+    '''
+        'symmetric_difference' retorna la diferencia simétrica de los n conjuntos.
+        Basicamente, la diferencia simétrica se puede expresar de dos maneras:
+        
+        1. (A - B) U (B - A)
+        2. (A U B) - (A ∩ B)
+        
+        En este caso, se implemento la primera opción.
+    '''
     def symmetric_difference(self, other_set):
         result = Set()
         for element in self.set1.elements:
@@ -42,6 +50,7 @@ class Operations:
                 result.add_element(element)
         return result
 
+    # 'complement' retorna el complemento del conjunto.
     def complement(self):
         universal_set = Set()
         for char in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789':
